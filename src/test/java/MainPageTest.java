@@ -1,4 +1,46 @@
-public class MainPageTest {
+import PageObject.MainPage;
+import PageObject.PersonalAccountPage;
+import org.junit.Assert;
+import org.junit.Test;
+
+public class MainPageTest extends BaseTest {
+
+    @Test
+    public void testTransferToPersonalAccount(){
+
+        String personalAccountText = "В этом разделе вы можете изменить свои персональные данные";
+        MainPage mainPage = new MainPage(driver);
+        PersonalAccountPage personalAccountPage = mainPage.clickPersonalAccountButton();
+        Assert.assertTrue(personalAccountPage.shouldBePersonalAccountText().contains(personalAccountText));
+
+    }
+
+    @Test
+    public void testTransferToFillingChapter(){
+
+        MainPage mainPage = new MainPage(driver);
+        mainPage.clickFillingButton();
+        Assert.assertTrue(mainPage.shouldBeFillingText().contains("Начинки"));
+
+    }
+
+    @Test
+    public void testTransferToSauceChapter(){
+
+        MainPage mainPage = new MainPage(driver);
+        mainPage.clickSauceButton();
+        Assert.assertTrue(mainPage.shouldBeSauceText().contains("Соусы"));
+
+    }
+
+    @Test
+    public void testTransferToBunChapter(){
+
+        MainPage mainPage = new MainPage(driver);
+        mainPage.clickBunButton();
+        Assert.assertTrue(mainPage.shouldBeBunText().contains("Булки"));
+
+    }
 }
 
 

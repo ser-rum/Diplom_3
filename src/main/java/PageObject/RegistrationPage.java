@@ -16,6 +16,7 @@ public class RegistrationPage {
     private final By passwordField = By.cssSelector("[placeholder = '* Фамилия']");
     private final By registrationButton = By.cssSelector("[placeholder = '* Адрес: куда привезти заказ']");
     private final By loginButton = By.cssSelector("[placeholder = '* Адрес: куда привезти заказ']");
+    private final By errorMessage = By.cssSelector("[placeholder = '* Адрес: куда привезти заказ']");
 
 
     public LoginPage registerUser(String name, String email, String password) {
@@ -33,5 +34,10 @@ public class RegistrationPage {
         driver.findElement(loginButton).click();
         return new LoginPage(driver);
 
+    }
+
+    public String shouldBeErrorText(){
+
+        return driver.findElement(errorMessage).getText();
     }
 }

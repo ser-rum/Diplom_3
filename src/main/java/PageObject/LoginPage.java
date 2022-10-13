@@ -16,6 +16,8 @@ public class LoginPage {
     private final By passwordField = By.cssSelector("[placeholder = '* Фамилия']");
     private final By loginButton = By.cssSelector("[placeholder = '* Адрес: куда привезти заказ']");
     private final By registrationButton = By.cssSelector("[placeholder = '* Адрес: куда привезти заказ']");
+    private final By passwordRecoveryButton = By.cssSelector("[placeholder = '* Адрес: куда привезти заказ']");
+    private final By loginLogo = By.cssSelector("[placeholder = '* Адрес: куда привезти заказ']");
 
 
     public MainPage login(String email, String password) {
@@ -30,5 +32,16 @@ public class LoginPage {
     public RegistrationPage clickRegistrationButton(){
         driver.findElement(registrationButton).click();
         return new RegistrationPage(driver);
+    }
+
+
+    public PasswordRecoveryPage clickPasswordRecoveryButton(){
+
+        driver.findElement(passwordRecoveryButton).click();
+        return new PasswordRecoveryPage(driver);
+    }
+
+    public String shouldBeLoginText(){
+        return driver.findElement(loginLogo).getText();
     }
 }

@@ -1,9 +1,7 @@
 package PageObject;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class MainPage {
 
@@ -16,6 +14,14 @@ public class MainPage {
 
     private final By personalAccountButton = By.xpath("");
     private final By loginButton = By.xpath("");
+    private final By placeOrderButton = By.xpath("");
+    private final By bunButton = By.xpath("");
+    private final By sauceButton = By.xpath("");
+    private final By fillingButton = By.xpath("");
+    private final By bunText = By.xpath("");
+    private final By sauceText = By.xpath("");
+    private final By fillingText = By.xpath("");
+    private final By constructBurgerText = By.xpath("");
 
 
     public PersonalAccountPage clickPersonalAccountButton() {
@@ -25,11 +31,50 @@ public class MainPage {
 
     }
 
+    public LoginPage clickPersonalAccountButtonWithoutLogin() {
+
+        driver.findElement(personalAccountButton).click();
+        return new LoginPage(driver);
+
+    }
+
     public LoginPage clickLoginButton() {
 
         driver.findElement(loginButton).click();
         return new LoginPage(driver);
 
+    }
+
+    public void clickBunButton() {
+        driver.findElement(bunButton).click();
+    }
+
+    public void clickSauceButton() {
+        driver.findElement(sauceButton).click();
+    }
+
+    public void clickFillingButton() {
+        driver.findElement(fillingButton).click();
+    }
+
+    public String shouldBePLaceOrderButton(){
+        return driver.findElement(placeOrderButton).getText();
+    }
+
+    public String shouldBeConstructBurgerText(){
+        return driver.findElement(constructBurgerText).getText();
+    }
+
+    public String shouldBeBunText(){
+        return driver.findElement(bunText).getText();
+    }
+
+    public String shouldBeSauceText(){
+        return driver.findElement(sauceText).getText();
+    }
+
+    public String shouldBeFillingText(){
+        return driver.findElement(fillingText).getText();
     }
 }
 

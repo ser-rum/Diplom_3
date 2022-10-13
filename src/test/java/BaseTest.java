@@ -1,7 +1,8 @@
+import PageObject.MainPage;
+import PageObject.PersonalAccountPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -26,6 +27,9 @@ public class BaseTest {
     @After
     public void tearDown(){
 
+        MainPage mainPage = new MainPage(driver);
+        PersonalAccountPage personalAccountPage = mainPage.clickPersonalAccountButton();
+        personalAccountPage.logoutUser();
         driver.quit();
 
     }

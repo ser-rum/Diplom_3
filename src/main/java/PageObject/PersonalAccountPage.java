@@ -15,6 +15,7 @@ public class PersonalAccountPage {
     private final By constructorButton = By.cssSelector("[placeholder = '* Имя']");
     private final By logoLink = By.cssSelector("[placeholder = '* Имя']");
     private final By logoutButton = By.cssSelector("[placeholder = '* Имя']");
+    private final By personalAccountText = By.cssSelector("[placeholder = '* Имя']");
 
 
     public MainPage clickConstructorButton(){
@@ -36,5 +37,9 @@ public class PersonalAccountPage {
         driver.findElement(logoutButton).click();
         return new LoginPage(driver);
 
+    }
+
+    public String shouldBePersonalAccountText(){
+        return driver.findElement(personalAccountText).getText();
     }
 }
