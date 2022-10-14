@@ -12,10 +12,10 @@ public class SetNewPasswordPage {
     }
 
 
-    private final By passwordField = By.cssSelector("[placeholder = '* Имя']");
-    private final By codeField = By.cssSelector("[placeholder = '* Имя']");
-    private final By saveButton = By.cssSelector("[placeholder = '* Имя']");
-    private final By loginButton = By.className("");
+    private final By passwordField = By.cssSelector(".input_type_password > input:nth-child(2)");
+    private final By codeField = By.cssSelector(".input_type_text > label:nth-child(1)");
+    private final By saveButton = By.className("button_button__33qZ0");
+    private final By loginButton = By.className("Auth_link__1fOlj");
 
 
     public LoginPage clickSaveButton(String password, String code){

@@ -11,9 +11,9 @@ public class PasswordRecoveryPage {
         this.driver = driver;
     }
 
-    private final By emailField = By.cssSelector("[placeholder = '* Имя']");
-    private final By recoveryButton = By.cssSelector("[placeholder = '* Имя']");
-    private final By loginButton = By.cssSelector("[placeholder = '* Имя']");
+    private final By emailField = By.cssSelector("input.text");
+    private final By recoveryButton = By.className("button_button__33qZ0");
+    private final By loginButton = By.className("Auth_link__1fOlj");
 
 
     public SetNewPasswordPage recoverPassword(String email) {

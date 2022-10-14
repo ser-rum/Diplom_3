@@ -12,16 +12,17 @@ public class MainPage {
         this.driver = driver;
     }
 
-    private final By personalAccountButton = By.xpath("");
-    private final By loginButton = By.xpath("");
-    private final By placeOrderButton = By.xpath("");
-    private final By bunButton = By.xpath("");
-    private final By sauceButton = By.xpath("");
-    private final By fillingButton = By.xpath("");
-    private final By bunText = By.xpath("");
-    private final By sauceText = By.xpath("");
-    private final By fillingText = By.xpath("");
-    private final By constructBurgerText = By.xpath("");
+    private final By personalAccountButton = By.xpath("/html/body/div/div/header/nav/a");
+    private final By loginButton = By.className("button_button__33qZ0");
+    private final By placeOrderButton = By.cssSelector("#root > div > main > " +
+            "section.BurgerConstructor_basket__29Cd7.mt-25 > div > button");
+    private final By bunButton = By.cssSelector("div.tab_tab__1SPyG:nth-child(1) > span:nth-child(1)");
+    private final By sauceButton = By.cssSelector("div.tab_tab__1SPyG:nth-child(2) > span:nth-child(1)");
+    private final By fillingButton = By.cssSelector("div.tab_tab__1SPyG:nth-child(3) > span:nth-child(1)");
+    private final By bunText = By.cssSelector("h2.text_type_main-medium:nth-child(1)");
+    private final By sauceText = By.cssSelector("h2.text:nth-child(3)");
+    private final By fillingText = By.cssSelector("h2.text:nth-child(5)");
+    private final By constructBurgerText = By.className("AppHeader_header__link_active__1IkJo");
 
 
     public PersonalAccountPage clickPersonalAccountButton() {

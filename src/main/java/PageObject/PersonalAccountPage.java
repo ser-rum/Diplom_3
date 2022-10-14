@@ -12,10 +12,10 @@ public class PersonalAccountPage {
     }
 
 
-    private final By constructorButton = By.cssSelector("[placeholder = '* Имя']");
-    private final By logoLink = By.cssSelector("[placeholder = '* Имя']");
-    private final By logoutButton = By.cssSelector("[placeholder = '* Имя']");
-    private final By personalAccountText = By.cssSelector("[placeholder = '* Имя']");
+    private final By constructorButton = By.xpath("/html/body/div/div/header/nav/ul/li[1]/a/p");
+    private final By logoLink = By.className("AppHeader_header__logo__2D0X2");
+    private final By logoutButton = By.className("Account_button__14Yp3");
+    private final By personalAccountText = By.className("Account_text__fZAIn");
 
 
     public MainPage clickConstructorButton(){

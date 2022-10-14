@@ -4,14 +4,12 @@ import PageObject.PersonalAccountPage;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class PersonalAccountTest extends BaseTest{
+public class PersonalAccountTest extends BaseForAccountTest {
 
     @Test
     public void testTransferToConstructor(){
 
-        MainPage mainPage = new MainPage(driver);
-        PersonalAccountPage personalAccountPage = mainPage.clickPersonalAccountButton();
-        MainPage mainPageAgain = personalAccountPage.clickConstructorButton();
+        MainPage mainPageAgain = new PersonalAccountPage(driver).clickConstructorButton();
         Assert.assertTrue(mainPageAgain.shouldBeConstructBurgerText().contains("Соберите бургер"));
 
     }
@@ -19,9 +17,7 @@ public class PersonalAccountTest extends BaseTest{
     @Test
     public void testTransferByLogoLink(){
 
-        MainPage mainPage = new MainPage(driver);
-        PersonalAccountPage personalAccountPage = mainPage.clickPersonalAccountButton();
-        MainPage mainPageAgain = personalAccountPage.clickLogoLink();
+        MainPage mainPageAgain = new PersonalAccountPage(driver).clickLogoLink();
         Assert.assertTrue(mainPageAgain.shouldBeConstructBurgerText().contains("Соберите бургер"));
 
     }
@@ -29,9 +25,7 @@ public class PersonalAccountTest extends BaseTest{
     @Test
     public void testLogout(){
 
-        MainPage mainPage = new MainPage(driver);
-        PersonalAccountPage personalAccountPage = mainPage.clickPersonalAccountButton();
-        LoginPage loginPage = personalAccountPage.logoutUser();
+        LoginPage loginPage = new PersonalAccountPage(driver).logoutUser();
         Assert.assertTrue(loginPage.shouldBeLoginText().contains("Вход"));
 
     }

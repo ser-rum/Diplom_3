@@ -12,12 +12,12 @@ public class LoginPage {
     }
 
 
-    private final By emailField = By.cssSelector("[placeholder = '* Имя']");
-    private final By passwordField = By.cssSelector("[placeholder = '* Фамилия']");
-    private final By loginButton = By.cssSelector("[placeholder = '* Адрес: куда привезти заказ']");
-    private final By registrationButton = By.cssSelector("[placeholder = '* Адрес: куда привезти заказ']");
-    private final By passwordRecoveryButton = By.cssSelector("[placeholder = '* Адрес: куда привезти заказ']");
-    private final By loginLogo = By.cssSelector("[placeholder = '* Адрес: куда привезти заказ']");
+    private final By emailField = By.cssSelector("[type = \"text\"]");
+    private final By passwordField = By.cssSelector("[type = \"password\"]");
+    private final By loginButton = By.className("button_button__33qZ0");
+    private final By registrationButton = By.xpath("/html/body/div/div/main/div/div/p[1]/a");
+    private final By passwordRecoveryButton = By.xpath("/html/body/div/div/main/div/div/p[2]/a");
+    private final By loginLogo = By.cssSelector("#root > div > main > div > h2");
 
 
     public MainPage login(String email, String password) {

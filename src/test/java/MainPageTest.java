@@ -3,15 +3,15 @@ import PageObject.PersonalAccountPage;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class MainPageTest extends BaseTest {
+public class MainPageTest extends BaseForMainTest {
 
     @Test
     public void testTransferToPersonalAccount(){
 
-        String personalAccountText = "В этом разделе вы можете изменить свои персональные данные";
         MainPage mainPage = new MainPage(driver);
         PersonalAccountPage personalAccountPage = mainPage.clickPersonalAccountButton();
-        Assert.assertTrue(personalAccountPage.shouldBePersonalAccountText().contains(personalAccountText));
+        Assert.assertTrue(personalAccountPage.shouldBePersonalAccountText().contains(
+                "В этом разделе вы можете изменить свои персональные данные"));
 
     }
 
@@ -37,6 +37,7 @@ public class MainPageTest extends BaseTest {
     public void testTransferToBunChapter(){
 
         MainPage mainPage = new MainPage(driver);
+        mainPage.clickFillingButton();
         mainPage.clickBunButton();
         Assert.assertTrue(mainPage.shouldBeBunText().contains("Булки"));
 

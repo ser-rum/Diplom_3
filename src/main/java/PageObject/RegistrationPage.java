@@ -11,12 +11,12 @@ public class RegistrationPage {
         this.driver = driver;
     }
 
-    private final By nameField = By.cssSelector("[placeholder = '* Адрес: куда привезти заказ']");
-    private final By emailField = By.cssSelector("[placeholder = '* Имя']");
-    private final By passwordField = By.cssSelector("[placeholder = '* Фамилия']");
-    private final By registrationButton = By.cssSelector("[placeholder = '* Адрес: куда привезти заказ']");
-    private final By loginButton = By.cssSelector("[placeholder = '* Адрес: куда привезти заказ']");
-    private final By errorMessage = By.cssSelector("[placeholder = '* Адрес: куда привезти заказ']");
+    private final By nameField = By.xpath("/html/body/div/div/main/div/form/fieldset[1]/div/div/input");
+    private final By emailField = By.xpath("/html/body/div/div/main/div/form/fieldset[2]/div/div/input");
+    private final By passwordField = By.cssSelector(".input_type_password > input:nth-child(2)");
+    private final By registrationButton = By.className("button_button__33qZ0");
+    private final By loginButton = By.className("Auth_link__1fOlj");
+    private final By errorMessage = By.className("input__error");
 
 
     public LoginPage registerUser(String name, String email, String password) {

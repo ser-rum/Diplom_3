@@ -1,11 +1,10 @@
 import PageObject.LoginPage;
-import PageObject.MainPage;
 import PageObject.RegistrationPage;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class RegistrationTest extends BaseTest{
+public class RegistrationTest extends BaseForRegistrationTest {
 
     private final String userName = "userName";
     private final String userEmail = RandomStringUtils.randomAlphabetic(10) + "@ya.ru";
@@ -16,10 +15,7 @@ public class RegistrationTest extends BaseTest{
     @Test
     public void testRegistrationWithValidPassword() {
 
-        MainPage mainPage = new MainPage(driver);
-        LoginPage loginPage = mainPage.clickLoginButton();
-        RegistrationPage registrationPage = loginPage.clickRegistrationButton();
-        LoginPage loginPageAgain = registrationPage.registerUser(userName,
+        LoginPage loginPageAgain = new RegistrationPage(driver).registerUser(userName,
                 userEmail, validUserPassword);
         Assert.assertTrue(loginPageAgain.shouldBeLoginText().contains("Вход"));
 
@@ -28,9 +24,7 @@ public class RegistrationTest extends BaseTest{
     @Test
     public void testRegistrationWithInvalidPassword() {
 
-        MainPage mainPage = new MainPage(driver);
-        LoginPage loginPage = mainPage.clickLoginButton();
-        RegistrationPage registrationPage = loginPage.clickRegistrationButton();
+        RegistrationPage registrationPage = new RegistrationPage(driver);
         registrationPage.registerUser(userName, userEmail, invalidUserPassword);
         Assert.assertTrue(registrationPage.shouldBeErrorText().contains("Некорректный пароль"));
 
