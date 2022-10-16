@@ -22,7 +22,7 @@ public class MainPage {
     private final By bunText = By.cssSelector("h2.text_type_main-medium:nth-child(1)");
     private final By sauceText = By.cssSelector("h2.text:nth-child(3)");
     private final By fillingText = By.cssSelector("h2.text:nth-child(5)");
-    private final By constructBurgerText = By.className("AppHeader_header__link_active__1IkJo");
+    private final By constructBurgerText = By.className("text_type_main-large");
 
 
     public PersonalAccountPage clickPersonalAccountButton() {
@@ -78,18 +78,3 @@ public class MainPage {
         return driver.findElement(fillingText).getText();
     }
 }
-
-//
-//    WebElement element = driver.findElement(bottomOrderButton);
-//        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", element);
-
-
-//    public String shouldBeExactText(By importantQuestionSelector,
-//                                    By importantAnswerSelector){
-//
-//        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();",
-//                driver.findElement(importantQuestionsBlock));
-//        driver.findElement(importantQuestionSelector).click();
-//        return driver.findElement(importantAnswerSelector).getText();
-//
-//    }

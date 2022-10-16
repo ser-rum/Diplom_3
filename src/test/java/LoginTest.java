@@ -7,11 +7,15 @@ import org.junit.Test;
 
 import static PageObject.BASE_URL.BASE_URL;
 
-public class LoginTest extends BaseForLoginTest {
+public class LoginTest extends BaseTestForLogin {
 
     String placedOrderMessage = "Оформить заказ";
     String email = "ser_rum@praktikum.ru";
     String password = "123123";
+
+    public LoginTest(String browser) {
+        super(browser);
+    }
 
 
     @Test
