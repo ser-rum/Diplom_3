@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
 
-import static PageObject.BASE_URL.BASE_URL;
+import static PageObject.BaseUrl.BASE_URL;
 
 @RunWith(Parameterized.class)
 public class BaseTestForMain {
@@ -26,7 +26,7 @@ public class BaseTestForMain {
         this.browser = browser;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Браузер: {0}")
     public static Object[][] getBrowser(){
         return new Object[][]{
                 {"Google Chrome"},

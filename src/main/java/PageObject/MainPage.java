@@ -1,5 +1,6 @@
 package PageObject;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -25,6 +26,7 @@ public class MainPage {
     private final By constructBurgerText = By.className("text_type_main-large");
 
 
+    @Step("Клик по кнопке \"Личный Кабинет\"")
     public PersonalAccountPage clickPersonalAccountButton() {
 
         driver.findElement(personalAccountButton).click();
@@ -32,6 +34,7 @@ public class MainPage {
 
     }
 
+    @Step("Клик по кнопке \"Личный Кабинет\" без авторизации")
     public LoginPage clickPersonalAccountButtonWithoutLogin() {
 
         driver.findElement(personalAccountButton).click();
@@ -39,6 +42,7 @@ public class MainPage {
 
     }
 
+    @Step("Клик по кнопке \"Войти в аакаунт\"")
     public LoginPage clickLoginButton() {
 
         driver.findElement(loginButton).click();
@@ -46,34 +50,42 @@ public class MainPage {
 
     }
 
+    @Step("Клик по кнопке \"Булки\"")
     public void clickBunButton() {
         driver.findElement(bunButton).click();
     }
 
+    @Step("Клик по кнопке \"Соусы\"")
     public void clickSauceButton() {
         driver.findElement(sauceButton).click();
     }
 
+    @Step("Клик по кнопке \"Начинки\"")
     public void clickFillingButton() {
         driver.findElement(fillingButton).click();
     }
 
+    @Step("Получение текста кнопки \"Оформить заказ\"")
     public String shouldBePLaceOrderButton(){
         return driver.findElement(placeOrderButton).getText();
     }
 
+    @Step("Получение текста банера \"Соберите бургер\"")
     public String shouldBeConstructBurgerText(){
         return driver.findElement(constructBurgerText).getText();
     }
 
+    @Step("Получение текста банера области \"Булки\"")
     public String shouldBeBunText(){
         return driver.findElement(bunText).getText();
     }
 
+    @Step("Получение текста банера области \"Соусы\"")
     public String shouldBeSauceText(){
         return driver.findElement(sauceText).getText();
     }
 
+    @Step("Получение текста банера области \"Начинки\"")
     public String shouldBeFillingText(){
         return driver.findElement(fillingText).getText();
     }

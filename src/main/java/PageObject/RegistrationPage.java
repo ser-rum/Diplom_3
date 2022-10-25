@@ -1,5 +1,6 @@
 package PageObject;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -19,6 +20,7 @@ public class RegistrationPage {
     private final By errorMessage = By.className("input__error");
 
 
+    @Step("Регистрация нового пользователя")
     public LoginPage registerUser(String name, String email, String password) {
 
         driver.findElement(nameField).sendKeys(name);
@@ -29,6 +31,7 @@ public class RegistrationPage {
 
     }
 
+    @Step("Клик по кнопке \"Войти\"")
     public LoginPage clickLoginButton(){
 
         driver.findElement(loginButton).click();
@@ -36,6 +39,7 @@ public class RegistrationPage {
 
     }
 
+    @Step("Получение текста \"Некорректный пароль\"")
     public String shouldBeErrorText(){
 
         return driver.findElement(errorMessage).getText();

@@ -20,7 +20,7 @@ public class BaseTestForLogin {
         this.browser = browser;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Браузер: {0}")
     public static Object[][] getBrowser(){
         return new Object[][]{
                 {"Google Chrome"},

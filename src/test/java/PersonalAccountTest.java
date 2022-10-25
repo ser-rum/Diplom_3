@@ -1,6 +1,7 @@
 import PageObject.LoginPage;
 import PageObject.MainPage;
 import PageObject.PersonalAccountPage;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -11,6 +12,7 @@ public class PersonalAccountTest extends BaseTestForAccount {
     }
 
     @Test
+    @DisplayName("Проверка перехода к конструктору бургеров")
     public void testTransferToConstructor(){
 
         PersonalAccountPage personalAccountPage = new PersonalAccountPage(driver);
@@ -20,6 +22,7 @@ public class PersonalAccountTest extends BaseTestForAccount {
     }
 
     @Test
+    @DisplayName("Проверка перехода на главную страницу через центральное лого")
     public void testTransferByLogoLink(){
 
         PersonalAccountPage personalAccountPage = new PersonalAccountPage(driver);
@@ -29,6 +32,7 @@ public class PersonalAccountTest extends BaseTestForAccount {
     }
 
     @Test
+    @DisplayName("Проверка выхода из аккаунта")
     public void testLogout(){
 
         PersonalAccountPage personalAccountPage = new PersonalAccountPage(driver);

@@ -2,10 +2,11 @@ import PageObject.LoginPage;
 import PageObject.MainPage;
 import PageObject.PasswordRecoveryPage;
 import PageObject.RegistrationPage;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static PageObject.BASE_URL.BASE_URL;
+import static PageObject.BaseUrl.BASE_URL;
 
 public class LoginTest extends BaseTestForLogin {
 
@@ -19,6 +20,7 @@ public class LoginTest extends BaseTestForLogin {
 
 
     @Test
+    @DisplayName("Авторизация пользователя с помощью кнопки \"Войти в аккаунт\"")
     public void testLoginByLoginButton() {
 
         driver.get(BASE_URL);
@@ -30,6 +32,7 @@ public class LoginTest extends BaseTestForLogin {
     }
 
     @Test
+    @DisplayName("Авторизация пользователя с помощью кнопки \"Личный Кабинет\"")
     public void testLoginByPersonalAccountButton(){
 
         driver.get(BASE_URL);
@@ -41,6 +44,7 @@ public class LoginTest extends BaseTestForLogin {
     }
 
     @Test
+    @DisplayName("Авторизация пользователя с помощью кнопки \"Войти\" в форме регистрации")
     public void testLoginByButtonInRegistrationForm() {
 
         driver.get(BASE_URL + "/register");
@@ -52,6 +56,7 @@ public class LoginTest extends BaseTestForLogin {
     }
 
     @Test
+    @DisplayName("Авторизация пользователя с помощью кнопки \"Войти\" в форме восстановления пароля")
     public void testLoginByButtonInPasswordRecoveryForm() {
 
         driver.get(BASE_URL + "/forgot-password");

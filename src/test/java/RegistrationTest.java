@@ -1,5 +1,6 @@
 import PageObject.LoginPage;
 import PageObject.RegistrationPage;
+import io.qameta.allure.junit4.DisplayName;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Assert;
 import org.junit.Test;
@@ -17,6 +18,7 @@ public class RegistrationTest extends BaseTestForRegistration {
 
 
     @Test
+    @DisplayName("Регистрация нового пользователя с корректным паролем")
     public void testRegistrationWithValidPassword() throws InterruptedException {
 
         RegistrationPage registrationPage = new RegistrationPage(driver);
@@ -28,6 +30,7 @@ public class RegistrationTest extends BaseTestForRegistration {
     }
 
     @Test
+    @DisplayName("Регистрация нового пользователя с некорректным паролем")
     public void testRegistrationWithInvalidPassword() {
 
         RegistrationPage registrationPage = new RegistrationPage(driver);

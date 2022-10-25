@@ -1,5 +1,6 @@
 import PageObject.MainPage;
 import PageObject.PersonalAccountPage;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -10,6 +11,7 @@ public class MainPageTest extends BaseTestForMain {
     }
 
     @Test
+    @DisplayName("Проверка перехода в личный кабинет")
     public void testTransferToPersonalAccount(){
 
         MainPage mainPage = new MainPage(driver);
@@ -20,6 +22,7 @@ public class MainPageTest extends BaseTestForMain {
     }
 
     @Test
+    @DisplayName("Проверка перехода к области выбора начинок")
     public void testTransferToFillingChapter(){
 
         MainPage mainPage = new MainPage(driver);
@@ -29,6 +32,7 @@ public class MainPageTest extends BaseTestForMain {
     }
 
     @Test
+    @DisplayName("Проверка перехода к области выбора соусов")
     public void testTransferToSauceChapter(){
 
         MainPage mainPage = new MainPage(driver);
@@ -38,6 +42,7 @@ public class MainPageTest extends BaseTestForMain {
     }
 
     @Test
+    @DisplayName("Проверка перехода к области выбора булок")
     public void testTransferToBunChapter(){
 
         MainPage mainPage = new MainPage(driver);
